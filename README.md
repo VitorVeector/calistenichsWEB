@@ -1,7 +1,7 @@
 # CalistenichsWEB
  Site de calistenia desenvolvido com HTML, CSS e JS.
 
-[Live: ](https://calistenichs-web.vercel.app/)
+Live: [Calisthenics](https://calistenichs-web.vercel.app/)
 
 ## Baixe o projeto BRUTO:
 
