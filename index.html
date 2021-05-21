@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap" rel="stylesheet">
     <title>Calistenichs - Workout</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/assets/svg/muscle.ico">
 </head>
 
 <body>
@@ -19,18 +20,18 @@
         <div id="logo2">
             <h1><a href="/">CW</a></h1>
         </div>
-        <button id="btnToggle"><img src="./assets/menu.svg" alt="menu"></button>
+        <button id="btnToggle"><img src="./assets/svg/menu.svg" alt="menu"></button>
         <nav id="nav">
             <ul id="menu">
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="./pages/imc.html">IMC</a></li>
+                <li><a href="./pages/routines.html">Rotina de treino</a></li>
+                <li><a href="./pages/contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="introduction">
-            <div id="introduction-slogan">
+            <div id="introduction-slogan" >
                 <h1>
                     <div class="rotate">+</div>Resistência
                 </h1>
@@ -43,17 +44,17 @@
             </div>
 
         </section>
-        <section class="container1">
-            <div id="text">
-                <div id="exclamation">!</div>
+        <section class="container1" >
+            <div id="text" data-anime="left">
+                <div id="exclamation" >!</div>
                 <p>É importante que os exercícios de calistenia sejam feitos sob orientação de um instrutor capacitado
                     para que se tenha a garantia de que as técnicas estão sendo realizadas corretamente, exista menor
                     risco de lesões e seja possível alcançar a maior quantidade de benefícios possível.</p>
             </div>
         </section>
         <section class="container">
-            <div class="card">
-                <a href="">
+            <div class="card"  data-anime="left">
+                <a href="./pages/calistenia.html">
                     <div class="imgBx">
                     <img src="./img/card1.jpg" alt="O QUE É CALISTENIA" >
                 </div>
@@ -63,8 +64,8 @@
             </a>
                 
             </div>
-            <div class="card">
-                <a href=""><div class="imgBx">
+            <div class="card" data-anime>
+                <a href="./pages/imc.html"><div class="imgBx">
                     <img src="./img/card2.jpg" alt="INDICE DE MASSA CORPORAL" >
                 </div>
                 <div class="content">
@@ -72,8 +73,8 @@
                 </div></a>
                 
             </div>
-            <div class="card">
-                <a href=""><div class="imgBx">
+            <div class="card" data-anime="right">
+                <a href="./pages/routines.html"><div class="imgBx">
                     <img src="./img/card3.jpg" alt="ROTINAS DE TREINO" >
                 </div>
                 <div class="content">
@@ -86,7 +87,7 @@
     <footer>
         <h2>© Vítor Araújo</h2>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./assets/script/script.js"></script>
 </body>
 
 </html>

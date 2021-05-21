@@ -12,6 +12,7 @@
     --red-shadows: #CCBCBC;
     --light-black: #0c0c0c;
     --red-wine: #ac1a1a;
+    --link-blue: #00eaff;
 }
 
 body {
@@ -32,6 +33,8 @@ body {
     top: 0;
     box-shadow: 0px 15px 15px #000000;
     z-index: 1000;
+    animation-name: bounce-fade-top;
+    animation-duration: 1.5s;
 }
 
 #logo {
@@ -50,12 +53,12 @@ body {
 }
 
 
-#logo2{
+#logo2 {
     display: none;
     margin-left: 40px;
 }
 
-#logo2 a{
+#logo2 a {
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
     text-transform: uppercase;
@@ -65,7 +68,7 @@ body {
     list-style: none;
 }
 
-#logo2 h1 a:hover{
+#logo2 h1 a:hover {
     color: var(--red-wine);
     transition: .4s;
 }
@@ -81,7 +84,7 @@ body {
     gap: 0.5rem;
     height: 70px;
     padding: 1rem;
-    
+
 }
 
 ul li {
@@ -115,44 +118,55 @@ ul li a {
     display: none;
     background-color: rgba(0, 0, 0, 0);
     border: none;
-    
+
 }
+
+/*----- Content ----- */
 
 #introduction-slogan {
     background-image: url(./img/banner.png);
     background-size: 100vw;
-    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 6rem 4rem;
     height: 90vh;
+    animation-name: bounce-fade-right;
+    animation-duration: 1.5s;
 }
 
-#introduction-slogan h1{
+#introduction-slogan h1 {
     text-transform: uppercase;
     padding: 1rem 0.5rem;
     font-weight: 700;
     font-size: 3rem;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
-#introduction-slogan h1 div{
-     position: absolute;
-     left: 30px;
+#introduction-slogan h1 div {
+    position: absolute;
+    left: 30px;
     transition: transform .5s ease-in-out;
-    z-index: 0;  
+    z-index: 0;
 }
 
-#introduction-slogan h1:hover .rotate{
+#introduction-slogan h1:hover{
+    cursor: default;
+}
+
+#introduction-slogan h1:hover .rotate {
     transform: rotate(180deg) scale(2);
     color: var(--red-wine);
     transition: .5s;
     z-index: 0;
 }
 
-.container1{
+.container1 {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 30px 20px;
 }
 
-#text{
+#text {
     display: inline-block;
     font-size: 36px;
     font-weight: 400;
@@ -165,28 +179,30 @@ ul li a {
 }
 
 
-#exclamation{
+#exclamation {
     font-weight: bolder;
     display: inline-block;
     transition: .5s ease-in-out
 }
 
-#text:hover #exclamation{
+#text:hover #exclamation {
     color: var(--red-wine);
     transition: 0.5s ease-in-out;
 }
 
-.container{
+.container {
     display: flex;
-    width: 90vw;
+    width: 98vw;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 30px;
+    animation-name: bounce-fade-top;
+    animation-duration: 1.5s;
 
 }
 
-.container .card{
+.container .card {
     font-weight: bolder;
     position: relative;
     max-width: 300px;
@@ -201,11 +217,11 @@ ul li a {
 
 }
 
-.container .card:hover{
+.container .card:hover {
     height: 215px;
 }
 
-.container .card .content{
+.container .card .content {
     position: relative;
     margin-top: -140px;
     padding: 10px 15px;
@@ -215,7 +231,7 @@ ul li a {
     transition: 0.3s ease-in-out;
 }
 
-.container .card:hover .content{
+.container .card:hover .content {
     visibility: visible;
     opacity: 1;
     margin-top: -60px;
@@ -223,23 +239,27 @@ ul li a {
     color: var(--red-shadows);
 }
 
-.container .card a{
+.container .card a {
     color: var(--red-shadows);
     text-decoration: none;
 }
 
+.container .card h2 {
+    text-shadow: 0 10px 10px black;
+}
 
-.container .card .imgBx{
+
+.container .card .imgBx {
     position: relative;
     width: 260px;
     height: 260px;
     top: -60px;
     box-shadow: 0 5px 20px black;
     z-index: 1;
-    
+
 }
 
-.container .card .imgBx img{
+.container .card .imgBx img {
     max-width: 100%;
     border-radius: 4px;
     width: 260px;
@@ -247,26 +267,327 @@ ul li a {
     overflow: hidden;
 }
 
-footer{
+footer {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 4rem;
     text-align: center;
+   
 }
 
-footer h2{
+footer h2 {
     font-size: 30px;
     font-weight: 100;
     color: white;
 
 }
 
+[data-anime] {
+    opacity: 0;
+    transition: .5s;
+}
+
+
+[data-anime="left"] {
+    transform: translate3d(-100px, 0, 0)
+}
+
+[data-anime="right"] {
+    transform: translate3d(100px, 0, 0)
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px)
+}
+
+#container2 {
+    width: 98vw;
+    height: 89vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center ;background-color: rgba(0, 0, 0, 0.3);
+    animation-name: bounce-fade-top;
+    animation-duration: 1.5s;
+}
+
+#formulario{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 20px 30px black;
+}
+
+#formulario h1{
+    font-weight: 100;
+    color: var(--red-shadows);
+    font-size: 15px;
+    
+}
+
+input{
+    margin-bottom: 15px;border-style: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+
+input::-webkit-input-placeholder{
+    color: #c2c2c2;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+
+
+#msg{
+    display: block;
+    border-style: none;
+    border-radius: 5px;
+    font-weight:bolder;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+}
+
+#submit{
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 15px;
+    border-style: none;
+    
+}
+
+#submit:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--red-wine);
+    cursor: pointer;
+    transition: .3s;
+}
+
+#imcCalc{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 70vh;
+    width: 40vw;
+    border-radius: 5px;
+    display: flex;justify-content: space-between;
+    flex-direction: column;
+    align-items: left;
+    box-shadow: 0 15px 30px black;
+}
+
+#imcCalc > .title{
+    
+    text-align: center;
+    color: var(--red-luster);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-bottom:  solid 1px var(--red-grape);
+    padding: 20px 30px;
+}
+
+#imcCalc label{
+    color: var(--red-shadows);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+#imcCalc .input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#imcCalc input{
+    color: var(--red-shadows);
+    padding: 6px 30px;
+    text-align: right;
+    font-weight: bolder;
+    
+}
+
+#imcCalc button{
+    position: relative;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--red-shadows);
+    border-style: none;
+    padding: 10px 30px;
+    text-align: center;
+    width: 100%;
+}
+
+#imcCalc button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--red-wine);
+    transition: .4s
+}
+
+#result{
+    height: 20vh;
+    width: 100%;
+    background-color: var(--light-black);
+    color: var(--red-wine);
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+
+
+#about{
+    margin: 80px 50px;
+    opacity: 1;
+    transition: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+#about > .title{
+    font-size: 20px;
+    color: var(--red-grape);
+}
+
+#about > .title a{
+    color: var(--link-blue);
+    font-style: italic;
+}
+#about > .content{
+    color: var(--red-shadows);
+    text-align: justify;
+}
+
+#about > .content h3{
+    padding: 30px 0px;
+}
+
+#about > .content p{
+    padding: 20px 5px;
+    font-size: 20px;
+}
+
+#about > .content ul{
+    margin-left: 40px;
+}
+
+#routineContainer{
+    margin-top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 98vw;
+    height: 89vh;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.rCard{
+    padding: 0px 50px;
+   
+}
+
+#routineContainer .imgCd{
+    max-width: 300px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: .5s ease-in-out;
+   
+}
+
+#routineContainer .imgCd:hover {
+    height: 300px;
+}
+
+#routineContainer .rCard .nivel h2{
+    text-transform: uppercase;
+    z-index: -1;
+    margin-top: -50px;
+    color: white;
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+
+#routineContainer .imgCd:hover~.nivel h2{
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+
+#routineContainer .imgCd img{
+    width: 350px;
+    height: 230px;
+    box-shadow: 0px 20px 15px black
+}
+
+@keyframes bounce-fade-top{
+    0% {transform: translateY(-50px);}
+    100% {transform: translateY(0px);}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes bounce-fade-bottom{
+    0% {transform: translateY(50px);}
+    100% {transform: translateY(0px);}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes bounce-fade-left{
+    0% {transform: translateX(-100px);}
+    100% {transform: translateY(0px);}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes bounce-fade-right{
+    0% {transform: translateX(100px);}
+    100% {transform: translateY(0px);}
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade{
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 /* ----- responsive -----*/
 
-@media (max-width: 900px){
-    #logo{
+@media (max-width: 1090px) {
+    #introduction-slogan {
+        background-image: url(./img/banner.png);
+        background-size: 100rem;
+        background-repeat: no-repeat;
+        padding: 6rem 4rem;
+        height: 90vh;
+    }
+
+    #imcCalc{
+        height: 80vh;
+        width: 80vw;
+    }
+
+    #routineContainer .imgCd img{
+        width: 250px;
+        height: 130px;
+    }
+
+    #routineContainer{
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    #logo {
         display: none;
     }
-    #logo2{
+
+    #logo2 {
         display: flex;
     }
 }
@@ -294,7 +615,7 @@ footer h2{
         overflow-y: hidden;
     }
 
-    #nav.active #menu{
+    #nav.active #menu {
         height: calc(100vh - 70px);
         visibility: visible;
     }
@@ -308,16 +629,14 @@ footer h2{
 
     #menu a {
         padding: 2rem;
-        
+
     }
 
     #menu li:hover {
         background-color: rgba(0, 0, 0, 0.5);
     }
 
-    #menu li a:hover{
+    #menu li a:hover {
         background-color: rgba(0, 0, 0, 0);
     }
-
-
 }
