@@ -1,7 +1,6 @@
 # CalistenichsWEB
  Site de calistenia desenvolvido com HTML, CSS e JS.
 
-## Link: calistenichs.github.io 
 
 ## Baixe o projeto BRUTO:
 
@@ -13,6 +12,7 @@
 
 ### Com o git instalado:
     1. git clone: https://github.com/VitorVeector/CalistenichsWEB
+    
     2. Execute Index.html
 
  > Página desenvolvida para   práticar semântica de HTML, CSS e JavaScript e será utilizada como portifólio de meu perfil
